@@ -18,5 +18,8 @@ CUDA_VISIBLE_DEVICES=0 python3 run_finetuning.py \
         --output_dir ./output/CoLA/a0.1_c0.01_t0.1 \
         --hparams json/cola.json
 
+## GLUE results: 
+GLUE leaderboard: https://gluebenchmark.com/leaderboard
 
+submitted name: ELECTRA-Large-NewSCL(single)
 
