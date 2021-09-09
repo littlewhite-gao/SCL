@@ -3,5 +3,20 @@ Paper: ;
 
 The code is modified based on ELECTRA: https://github.com/google-research/electra.
 
-## model architectures:
+## fine-tuning on GLUE (ELECTRA):
+
+CUDA_VISIBLE_DEVICES=0 python3 run_finetuning.py \
+        --data_dir ./data/CoLA \
+        --electra_model ./electra_base \
+        --epochs 3 \
+        --use_cl true \
+        --c_type token_cutoff \
+        --cut_rate 0.01 \
+        --alpha 0.1 \
+        --tau 0.1 \
+        --write true \
+        --output_dir ./output/CoLA/tsne/a0.1_c0.01_t0.1 \
+        --hparams json/cola.json
+
+
 
