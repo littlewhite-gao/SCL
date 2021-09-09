@@ -1,5 +1,5 @@
 # EaR-SCL
-Paper: ;
+Paper:
 
 The code is modified based on ELECTRA: https://github.com/google-research/electra.
 
@@ -15,7 +15,7 @@ CUDA_VISIBLE_DEVICES=0 python3 run_finetuning.py \
         --alpha 0.1 \
         --tau 0.1 \
         --write true \
-        --output_dir ./output/CoLA/tsne/a0.1_c0.01_t0.1 \
+        --output_dir ./output/CoLA/a0.1_c0.01_t0.1 \
         --hparams json/cola.json
 
 
