@@ -22,4 +22,5 @@ CUDA_VISIBLE_DEVICES=0 python3 run_finetuning.py \
 GLUE leaderboard: https://gluebenchmark.com/leaderboard
 
 submitted name: ELECTRA-Large-NewSCL(single)
+                ELECTRA-Base-NewSCL(single)
 
