@@ -1,0 +1,15 @@
+{
+    "task_names": ["cola"],
+    "max_seq_length": 64,
+    "vocab_size": 30522,
+    "model_size": "base",
+    "do_train": true,
+    "do_eval": true,
+    "use_tfrecords_if_existing":false,
+    "write_test_outputs": true,
+    "learning_rate": 1e-4,
+    "train_batch_size": 32,
+    "num_trials": 5,
+    "eval_batch_size": 8,
+    "predict_batch_size": 1
+}
