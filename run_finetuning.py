@@ -1,17 +1,4 @@
 # coding=utf-8
-# Copyright 2020 The Google Research Authors.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 """Fine-tunes an ELECTRA model on a downstream task."""
 
@@ -39,7 +26,6 @@ from model import modeling
 from model import optimization
 from util import training_utils
 from util import utils
-# from util import tsne
 import arguments
 
 
@@ -320,7 +306,7 @@ def write_cls_outputs(config: configure_finetuning.FinetuningConfig,
             w.write(str(logits))
 
 
-def write_results(results_txt, splits, results):
+def write_results(results_txt, split, results):
     """Write evaluation metrics to disk."""
     utils.log("Writing results to", results_txt)
     utils.mkdir(results_txt.rsplit("/", 1)[0])
@@ -330,7 +316,7 @@ def write_results(results_txt, splits, results):
             for task_name, task_results in trial_results.items():
                 if task_name == "time" or task_name == "global_step":
                     continue
-                results_str += task_name + "/" + splits[i % len(splits)] + ": " + " - ".join(
+                results_str += task_name + "/" + split + ": " + " - ".join(
                     ["{:}: {:.2f}".format(k, v) if k not in ['probs', 'logits', 'reprs'] else ''
                      for k, v in task_results.items()]) + "\n"
         f.write(results_str)
